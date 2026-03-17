@@ -53,7 +53,7 @@ sequenceDiagram
     U->>P: Ingresar wallet o correo
     P->>W: Emitir o reservar POAP
     P-->>U: Certificado disponible
-
+```
 ## Diagrama de componentes
 
 ```mermaid
@@ -64,3 +64,4 @@ flowchart LR
     D[Asistente] --> B
     D --> E[Wallet o correo]
     C --> E
+```
