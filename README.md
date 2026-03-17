@@ -39,6 +39,21 @@ La arquitectura mínima del sistema está compuesta por los siguientes elementos
 6. POAP emite o reserva el certificado digital de asistencia.
 7. El asistente conserva el POAP como evidencia de participación en el evento.
 
+```mermaid
+sequenceDiagram
+    participant O as Organizador
+    participant P as POAP
+    participant U as Usuario
+    participant W as Wallet/Correo
+
+    O->>P: Crear evento
+    P-->>O: Evento aprobado
+    O->>U: Compartir acceso de claim
+    U->>P: Reclamar certificado
+    U->>P: Ingresar wallet o correo
+    P->>W: Emitir o reservar POAP
+    P-->>U: Certificado disponible
+
 ## Diagrama de componentes
 
 ```mermaid
