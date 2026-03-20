@@ -92,7 +92,7 @@ Para una eficiente funcionalidad, se divide en tres capas técnicas:
 ### Propiedades de Seguridad y Confianza
 1. **Inmutabilidad:** Una vez emitido el POAP, nadie puede borrar el registro de que asististe al evento.
 2. **Verificabilidad:** Cualquier empresa puede revisar tu wallet en un explorador de bloques (como GnosisScan) para confirmar que tu certificado es real.
-3. **Prevención de Fraude:** Al usar enlaces únicos, se evita que personas que no estuvieron en la charla obtengan el título.
+3. **Prevención de Fraude:** Al usar enlaces únicos, se evita que personas que no estuvieron en la charla, evento, etc, obtengan el título.
 
 
 
