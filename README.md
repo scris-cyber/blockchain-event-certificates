@@ -1,6 +1,6 @@
 # blockchain-event-certificates
 
-Minimal blockchain architecture project for event attendance certificates using POAP.
+Proyecto de certificados de asistencia a eventos inspirado en POAP, implementado con smart contracts propios en Solidity.
 
 ## Descripción del sistema
 
@@ -93,6 +93,40 @@ Para una eficiente funcionalidad, se divide en tres capas técnicas:
 1. **Inmutabilidad:** Una vez emitido el POAP, nadie puede borrar el registro de que asististe al evento.
 2. **Verificabilidad:** Cualquier empresa puede revisar tu wallet en un explorador de bloques (como GnosisScan) para confirmar que tu certificado es real.
 3. **Prevención de Fraude:** Al usar enlaces únicos, se evita que personas que no estuvieron en la charla, evento, etc, obtengan el título.
+
+
+## Desarrollo de contratos inteligentes
+
+Para la segunda entrega del proyecto se implementó un smart contract propio en Solidity utilizando Hardhat y una blockchain local. En lugar de depender directamente de la infraestructura de POAP, se desarrolló una versión simplificada del concepto de prueba de asistencia.
+
+El contrato principal del sistema es `AttendanceRegistry.sol`, el cual permite:
+
+- crear eventos
+- registrar asistencia de direcciones
+- verificar asistencia por evento
+- cerrar eventos
+
+Esta implementación mantiene coherencia con el proyecto original de certificados de asistencia a eventos y prepara la base para la futura Dapp y el despliegue en Polygon Amoy.  [oai_citation:1‡13_proyectosFinales.pdf](sediment://file_00000000957c71fdbb35c7df36dde4f0)
+
+## Desarrollo de contratos inteligentes
+
+Para la segunda entrega del proyecto se implementó un smart contract propio en Solidity utilizando Hardhat y una blockchain local. En lugar de depender directamente de la infraestructura de POAP, se desarrolló una versión simplificada del concepto de prueba de asistencia.
+
+El contrato principal del sistema es `AttendanceRegistry.sol`, el cual permite:
+
+- crear eventos
+- registrar asistencia de direcciones
+- verificar asistencia por evento
+- cerrar eventos
+
+Esta implementación mantiene coherencia con el proyecto original de certificados de asistencia a eventos y prepara la base para la futura Dapp y el despliegue en Polygon Amoy.  [oai_citation:1‡13_proyectosFinales.pdf](sediment://file_00000000957c71fdbb35c7df36dde4f0)
+
+## Evidencia local
+
+- Compilación exitosa con Hardhat
+- 4 pruebas unitarias aprobadas
+- Despliegue local del contrato en blockchain local
+- Dirección del contrato desplegado: `0x5FbDB2315678afecb367f032d93F642f64180aa3`
 
 
 
