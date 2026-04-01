@@ -1,0 +1,19 @@
+{
+  "name": "Blockchain Certificate 2026",
+  "description": "Certificado oficial de participación en el taller de Smart Contracts y Web3.",
+  "image": "ipfs://tu-archivo-de-imagen",
+  "attributes": [
+    {
+      "trait_type": "Standard",
+      "value": "ERC-721"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Ethereum"
+    },
+    {
+      "trait_type": "Status",
+      "value": "Verified"
+    }
+  ]
+}
