@@ -3,80 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Certificado de Asistencia con POAP</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      line-height: 1.6;
-      color: #111;
-    }
-
-    h1, h2 {
-      margin-bottom: 0.5rem;
-    }
-
-    .container {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 24px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 12px 20px;
-      background: #111;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-
-    .steps li {
-      margin-bottom: 8px;
-    }
-
-    .note {
-      margin-top: 20px;
-      padding: 12px;
-      background: #f5f5f5;
-      border-left: 4px solid #111;
-    }
-  </style>
+  <title>Registro de Asistencia en Blockchain</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Certificado de Asistencia a Eventos</h1>
-    <p>
-      Este prototipo representa un sistema mínimo para emitir certificados
-      digitales de asistencia utilizando POAP (Proof of Attendance Protocol).
-    </p>
+  <h1>Registro de Asistencia a Eventos</h1>
 
-    <h2>Objetivo</h2>
-    <p>
-      Permitir que una persona asistente a un evento académico, charla,
-      conferencia o taller pueda reclamar un certificado digital verificable.
-    </p>
+  <button id="connectButton">Conectar MetaMask</button>
 
-    <h2>Flujo básico</h2>
-    <ol class="steps">
-      <li>El organizador crea el evento en POAP.</li>
-      <li>POAP aprueba el evento y habilita el claim.</li>
-      <li>El organizador comparte el acceso de reclamo.</li>
-      <li>El asistente ingresa su wallet o correo electrónico.</li>
-      <li>POAP emite o reserva el certificado digital.</li>
-    </ol>
+  <h2>Crear evento</h2>
+  <input id="eventName" type="text" placeholder="Nombre del evento" />
+  <button id="createButton">Crear evento</button>
 
-    <a class="btn" href="https://poap.xyz/" target="_blank" rel="noopener noreferrer">
-      Ir a POAP
-    </a>
+  <h2>Gestionar asistencia</h2>
+  <input id="eventId" type="number" placeholder="ID del evento" />
+  <input id="attendeeAddress" type="text" placeholder="Dirección del asistente (opcional)" />
 
-    <div class="note">
-      Este frontend es una representación mínima del sistema propuesto y no
-      implementa integración directa con APIs privadas.
-    </div>
+  <div>
+    <button id="registerButton">Registrar asistencia</button>
+    <button id="verifyButton">Verificar asistencia</button>
+    <button id="closeButton">Cerrar evento</button>
   </div>
+
+  <p id="status">Desconectado</p>
+  <p id="result"></p>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
