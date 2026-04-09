@@ -124,6 +124,7 @@ Sus funciones clave son:
 ### Dapp
 
 La interfaz web fue desarrollada para permitir que el usuario interactúe con el contrato usando MetaMask. Las funcionalidades implementadas son:
+
 	•	conectar wallet
 	•	detectar la red activa
 	•	resolver la dirección del contrato desde web/config.json
