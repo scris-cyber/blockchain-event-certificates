@@ -89,6 +89,7 @@ graph TD
 ## Diagrama de flujo de transacciones 
 
 sequenceDiagram
+
     participant O as Organizador
     participant C as Contrato
     participant U as Usuario
