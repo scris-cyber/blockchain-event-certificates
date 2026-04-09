@@ -5,24 +5,17 @@ import path from "path";
 async function main() {
   const { ethers } = await hre.network.connect();
 
+  const network = await ethers.provider.getNetwork();
+  const chainId = Number(network.chainId);
+
   const configPath = path.join(process.cwd(), "web", "config.json");
   if (!fs.existsSync(configPath)) {
     throw new Error("No existe web/config.json. Primero haga el deploy.");
   }
 
   const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
-
-  const chainIdMap = {
-    localhost8546: 31337,
-    amoy: 80002
-  };
-
-  const chainId = chainIdMap[hre.network.name];
-  if (!chainId) {
-    throw new Error(`No hay chainId configurado para la red ${hre.network.name}`);
-  }
-
   const deployment = config[String(chainId)];
+
   if (!deployment?.contractAddress) {
     throw new Error(`No hay contractAddress en config.json para chainId ${chainId}`);
   }
@@ -37,6 +30,7 @@ async function main() {
   const codeHash = ethers.keccak256(ethers.toUtf8Bytes(claimCode));
 
   console.log("Usando contrato:", deployment.contractAddress);
+  console.log("Chain ID:", chainId);
   console.log("Creando evento:", eventName);
 
   const tx1 = await contract.createEvent(eventName);
@@ -47,7 +41,7 @@ async function main() {
   const tx2 = await contract.addClaimCode(0, codeHash);
   await tx2.wait();
 
-  console.log("Claim code cargado");
+  console.log("Claim code cargado correctamente");
   console.log("Claim code de prueba:", claimCode);
   console.log("Code hash:", codeHash);
 }
