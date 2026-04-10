@@ -1,0 +1,17 @@
+# Registro de Asistencia vía QR
+Este archivo explica la integración del código QR para el acceso automático a la dApp de certificados.
+
+### Funcionamiento:
+* Al escanear el QR, el usuario es dirigido a la web con el parámetro `?id=0` ya incluido.
+* Esto permite que el sistema identifique el evento automáticamente.
+
+### Notas importantes para la revisión (Restricciones):
+Para que la interfaz de usuario muestre todas las opciones (como el botón de "Claim"):
+1. **Conexión de Wallet:** El usuario debe tener una billetera (como MetaMask) conectada al navegador
+2. **Estado del Contrato:** La opción de reclamar el certificado solo se habilitará si el Smart Contract valida que el evento está activo y que la dirección de la wallet es apta para recibirlo.
+3. **Parámetros:** El QR garantiza el direccionamiento, pero la interacción final depende de la validación en la Blockchain
+
+### Resultado esperado al cumplir las restricciones:
+* La dApp reconocerá automáticamente el Evento #0
+* El botón de "Claim" se activará para la interacción
+* Se procesará la firma en la red para la emisión del certificado digital (NFT)
